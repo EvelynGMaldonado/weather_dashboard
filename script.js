@@ -13,10 +13,11 @@ var day4 = $("#day-3");
 var day5 = $("#day-4");
 var searchBtn = $("#serch-btn");
 
-// var key = "bfe4c6b0b80c5629d680df228c7a85c5";
+var key = "bfe4c6b0b80c5629d680df228c7a85c5";
 var basicUrl = "https://api.openweathermap.org/data/2.5/"
 var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + key; 
-var key = "abb27ab7b2c1aa8f64f406b7390718bd";
+// var key = "abb27ab7b2c1aa8f64f406b7390718bd";
+// var key = "0d31713b1ec6d162386c616d47247daf";
 var cityName;
 var latit;
 var longit;
@@ -29,6 +30,7 @@ var longit;
 // create function to handle form submission
 function selectCity(event) {
   event.preventDefault();
+  console.log("city has been called")
   // select form element by its `name` attribute and get its value
   var cityName = $('input[name="city-input"]').val();
   // if there's nothing in the form entered, don't print to the page
@@ -49,14 +51,20 @@ function selectCity(event) {
 
 
 //funtion `getWeeather(lat, lon)`
-function getWeather(){
+function getWeather(cityName){
+  console.log("running getweather function")
     //fetch city data by lon and lat 
-  var weatherByCity = "https://api.openweathermap.org/data/2.5/onecall?lat=${latit}&lon=${longit}&appid="+ key;
+    // var weatherByCity = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`;
+
+
+    ///lat and lon changing promies together mdevelopers network 
+  var weatherByCity = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&appid=${key}`;
   fetch(weatherByCity)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      console.log("charging")
       var icon = data.current.weather[0].icon;
       currentCity.text(cityName + " " + currentDate + ".");
       currentCity.append('<img src="http://openweathermap.org/img/wnnnn/${icon}@2x.png" style="width:20px;height:30px;">');
@@ -65,12 +73,14 @@ function getWeather(){
       var currentUvi = data.current.uvi;
       currentUv.text(currentUvi);
     //TODO:drill the data objerct to get lon
+
     //TODO:drill the data objerct to get lat
+    
     //TODO call getWeatherfuntion and pass lat and lon
-    }
+    
 
       // 5day forecast(data) function
-    for (i=0; i<5; i++) {
+    for (let i=0; i<5; i++) {
       var nextDay = moment().add(i+1, "d").format("M/DD/YYYY");
       var fiveDay = $("#day" + i);
       fiveDay.append("<div>${nextDay}</div>");
@@ -79,6 +89,7 @@ function getWeather(){
       fiveDay.append('<div>Temperature: ' + data['daily'][i].temp.day + ' F </div>');
       fiveDay.append('<div>Wind: ' + data['daily'][i].wind_speed + ' mph </div>');
       fiveDay.append('<div>Humidity: ' + data['daily'][i].humidity + ' % </div>');
+    }
     });
 }
 
