@@ -6,58 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
   <link rel="stylesheet" href="style.css" />
   <title>Weather Dashboard</title>
 </head>
 
 <body>
-  <header class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
+  <header class="jumbotron jumbotron-fluid" id="title">
+    <div class="container text-center" >
       <h1 class="display-4">Weather Dashboard</h1>
 
     </div>
   </header>
-  <main class="row">
-    <aside class="my-5 mx-1 col-3">
-      <h2>Search a city</h2>
+  <main class="row ml-2">
+    <aside class="my-3 mx-1 col-3 position-relative rounded" id="border1">
+      <h2 class="text-center mb-3" id="searchc">Search city</h2>
 
-      <form id="city-form">
-        <input type="text" class="form-input w-100" id="city-input" name="city-input" placeholder="Enter a city name" />
-        <button id="search-btn" type="submit" class="btn btn-info mt-3">Search</button>
+      <form class="ml-2" id="city-form">
+        <input type="text" class="form-input" id="city-input" name="city-input" placeholder="Enter city name" />
+        <button id="search-btn" type="submit" class="btn btn-primary btn-block mt-3">Search</button>
       </form>
 
-      <ul id="city-list" class="list-group"></ul>
+      <ul id="city-list" class="list-group ml-2"></ul>
     </aside>
 
-    <main class="col">
-      <div id="current-weather-info" class="col border border-dark mb-3">
-        <h3 id="current-city"> City:  </h3>
-        <div>Temperature: <span id="current-temp"></span> F </div>
-        <div>Wind: <span id="current-wind"></span> mph </div>
-        <div>Humedity: <span id="current-hum"></span> % </div>
-        <div>UV: <span id="current-uv"></span> </div>
+    <main class="col mr-3 mt-3 ml-3 ">
+      <div id="current-weather-info" class="col mb-3 rounded">
+        <h2 class="mb-3 mt-3" id="current-city"> City: </h2>
+        <h3 class="mb-3" id="current-date"> date: </h3>
+        <div class="mb-3 data">Temperature: <span id="current-temp"></span> F </div>
+        <div class="mb-3 data">Wind: <span id="current-wind"></span> mph </div>
+        <div class="mb-3 data">Humedity: <span id="current-hum"></span> % </div>
+        <div class="mb-3 data">UV: <span id="current-uv"></span> </div>
       </div>
 
-        <div class="col">
-          <h1>Five Day Forecast</h1>
+        <div class="col mt-5">
+          <h2>Five Day Forecast</h2>
           <div id="five-day" class="row">
-            <div id="day0" class="col">
-              <h2>Day 1</h2>>
+            <div id="day0" class="col fivd mr-2 mt-2 rounded">
+              <h4>Day 1</h4>
             </div>
-            <div id="day1" class="col">
-              <h2>Day 2</h2>>
+            <div id="day1" class="col fivd mr-2 mt-2 rounded">
+              <h4>Day 2</h4>
             </div>
-            <div id="day2" class="col">
-              <h2>Day 3</h2>>
+            <div id="day2" class="col fivd mr-2 mt-2 rounded">
+              <h4>Day 3</h4>
             </div>
-            <div id="day3" class="col">
-              <h2>Day 4</h2>>
+            <div id="day3" class="col fivd mr-2 mt-2 rounded">
+              <h4>Day 4</h4>
             </div>
-            <div id="day4" class="col">
-              <h2>Day 5</h2>>
+            <div id="day4" class="col fivd mt-2 rounded">
+              <h4>Day 5</h4>
             </div>
           </div>
         </div>

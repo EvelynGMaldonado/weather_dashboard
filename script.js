@@ -1,6 +1,7 @@
 var cityFormEl = $("#city-form");
 var cityListEl = $("#city-list");
 var currentDate = moment().format("M/DD/YYYY");
+var currentDatet = $("#current-date");
 var currentCity = $("#current-city");
 var currentTemp = $("#current-temp");
 var currentWind = $("#current-wind");
@@ -13,11 +14,10 @@ var day4 = $("#day3");
 var day5 = $("#day4");
 var searchBtn = $("#serch-btn");
 
-var key = "bfe4c6b0b80c5629d680df228c7a85c5";
+var key= "abb27ab7b2c1aa8f64f406b7390718bd"
+// var key = "bfe4c6b0b80c5629d680df228c7a85c5";
 var basicUrl = "https://api.openweathermap.org/data/2.5/"
 var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + key; 
-// var key = "abb27ab7b2c1aa8f64f406b7390718bd";
-// var key = "0d31713b1ec6d162386c616d47247daf";
 var cityName;
 var latit;
 var longit;
@@ -99,8 +99,9 @@ function getWeather(cityName){
     .then(function (data) {
       console.log("charging")
       var icon = data.current.weather[0].icon;
-      currentCity.text(cityName + " " + currentDate + ".");
-      currentCity.append(`<img src="http://openweathermap.org/img/wn/${icon}@2x.png" style="width:100px;height:100px;">`);
+      currentCity.text(cityName);
+      currentDatet.text(currentDate);
+      currentDatet.append(`<img class="img-fluid mx-auto d-block" src="http://openweathermap.org/img/wn/${icon}@2x.png" style="width:150px;height:150px;">`);
       currentTemp.text(data.current.temp);
       currentWind.text(data.current.wind_speed);
       currentHum.text(data.current.humidity);
@@ -117,13 +118,13 @@ function getWeather(cityName){
     for (let i=0; i<5; i++) {
       var nextDay = moment().add(i+1, "d").format("M/DD/YYYY");
       var fiveDay = $("#day" + i);
-      fiveDay.append(`<h2>Day ${i+1} </h2>`);
-      fiveDay.append(`<div>${nextDay}</div>`);
+      fiveDay.append(`<h4 class="daylet">Day ${i+1} </h4>`);
+      fiveDay.append(`<div class="data mt-3">${nextDay}</div>`);
       var nextIcon = data["daily"][i].weather[0]["icon"];
-      fiveDay.append(`<img src="http://openweathermap.org/img/wn/${nextIcon}@2x.png" style="width:20px;height:30px;">`);
-      fiveDay.append('<div>Temperature: ' + data['daily'][i].temp.day + ' F </div>');
-      fiveDay.append('<div>Wind: ' + data['daily'][i].wind_speed + ' mph </div>');
-      fiveDay.append('<div>Humidity: ' + data['daily'][i].humidity + ' % </div>');
+      fiveDay.append(`<img class="img-fluid mx-auto d-block" src="http://openweathermap.org/img/wn/${nextIcon}@2x.png" style="width:100px;height:100px;">`);
+      fiveDay.append('<div class="data">Temperature: ' + data['daily'][i].temp.day + ' F </div>');
+      fiveDay.append('<div class="data">Wind: ' + data['daily'][i].wind_speed + ' mph </div>');
+      fiveDay.append('<div class="data">Humidity: ' + data['daily'][i].humidity + ' % </div>');
     }
     });
 }

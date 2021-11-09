@@ -1,9 +1,149 @@
+:root {
+  --white:  #fff;
+  --yellow:  #F3CD05;
+  --green:  #20e00fde;
+  --blue:  rgba(22, 78, 230, 0.829);
+  --red:  rgba(255, 0, 0, 0.623);
+  --black:  black;
+  --brown:  #774000d8;
+  --purple: rgb(52, 7, 90);
+  --green1: rgba(47, 194, 47, 0.753);
+  --blueish: rgb(9, 139, 133);
+  /* background: linear-gradient(to bottom, #ff6600 28%, #993300 100%); */
+} 
+
+body {
+  /* background-color: var(--blueish); */
+  background-color: black;
+  
+}
+h1 {
+  font-size: 4.5rem;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 0.05rem;
+  font-family:"Audiowide", sans-serif;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color:rgba(168, 235, 67, 0.952);
+  text-align: center;
+  font-weight: bolder;
+  /* color:rgb(36, 36, 136) */
+}
+
+h3 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+h4 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.8rem;
+}
 ul {
-    margin: 3rem auto;
-    font-size: 1.75rem;
-  }
-  
-  ul li {
-    margin: 1.2rem 0;
-  }
-  
+  margin: 3rem auto;
+  font-size: 1.75rem;
+}
+
+ul li {
+  margin: 1.2rem 0;
+}
+.daylet {
+  text-align: center;
+}
+.data {
+  text-align: center;
+}
+.list-group-item {
+  font-size: 1.5rem;
+  padding: 0px;
+  text-align: center;
+
+}
+#title {
+  background-color: black;
+  margin-bottom: 0px;
+}
+#city-input {
+  width: 100%;
+  height: 60px;
+}
+#current-weather-info{
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+  background-color:rgba(141, 226, 13, 0.733);
+  color: white;
+  padding: 2%;
+  border:10px solid white;
+}
+.fivd {
+  background-color: white;
+  color:black;
+}
+#day0 {
+  background-color: rgb(36, 36, 136);
+  color: white;
+  padding: 2%;
+  border:10px solid rgba(141, 226, 13, 0.733);
+  border-style: dotted;
+  border-width: thick;
+}
+#day1 {
+  background-color: rgb(36, 36, 136);
+  color: white;
+  padding: 2%;
+  border:10px solid rgba(141, 226, 13, 0.733);
+  border-style: dotted;
+  border-width: thick;
+}
+#day2 {
+  background-color: rgb(36, 36, 136);
+  color: white;
+  padding: 2%;
+  border:10px solid rgba(141, 226, 13, 0.733);
+  border-style: dotted;
+  border-width: thick;
+}
+#day3 {
+  background-color: rgb(36, 36, 136);
+  color: white;
+  padding: 2%;
+  border:10px solid rgba(141, 226, 13, 0.733);
+  border-style: dotted;
+  border-width: thick;
+}
+#day4 {
+  background-color: rgb(36, 36, 136);
+  color: white;
+  padding: 2%;
+  border:10px solid rgba(141, 226, 13, 0.733);
+  border-style: dotted;
+  border-width: thick;
+}
+#current-city {
+  color:rgb(36, 36, 136);
+}
+#current-date {
+  color:rgb(36, 36, 136);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+#border1 {
+  background-color: navajowhite;
+  padding: 2%;
+  margin: 0px;
+  height: auto;
+  border:10px solid rgb(36, 36, 136);
+  border-style: dotted;
+  border-width: thick;
+}
+#searchc {
+  color:black;
+  font-weight: bolder;
+
+}
